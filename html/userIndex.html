@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="../css/common.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="/css/userIndex.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/searchUser.js"></script>
+  <title>User Index</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="userIndex.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personalDetails.html">MyProfile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myAppointemt.html">My Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+          <pre class="text-light"><img class="user" src="/img/user.jpg"> Hi, User Chris</pre>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+
+  <div class="ht_banner">
+    <div class="container">
+      <div class="row card">
+        <div class="ht_searchBox_content ">
+          <div class="row">
+            <div class="col text-center heading-section">
+              <h3>Search Property</h3>
+            </div>
+          </div>
+          <div class="row" style="border-bottom:1px">
+            <div class="col-md-6 col-sm-12 mb-3">
+              District: <select name="district" id="district" class="form-control">
+                <option value=""></option>
+                <optgroup label="Hong Kong Island">
+                  <option value="CentralAndWestern" selected>Central and Western</option>
+                  <option value="WanChai">Wan Chai</option>
+                  <option value="Eastern ">Eastern </option>
+                  <option value="Southern  ">Southern </option>
+                </optgroup>
+                <optgroup label="Kowloon">
+                  <option value="YauTsimMong ">Yau Tsim Mong </option>
+                  <option value="ShamShuiPo">Sham Shui Po</option>
+                  <option value="KowloonCity">Kowloon City</option>
+                  <option value="WongTaiSin">Wong Tai Sin</option>
+                  <option value="KwunTong">Kwun Tong</option>
+                </optgroup>
+                <optgroup label="New Territories">
+                  <option value="KwaiTsing ">Kwai Tsing</option>
+                  <option value="TsuenWan ">Tsuen Wan</option>
+                  <option value="Tuen Mun ">Tuen Mun</option>
+                  <option value="YuenLong ">Yuen Long</option>
+                  <option value="North"> North</option>
+                  <option value="TaiPo"> Tai Po</option>
+                  <option value="ShaTin"> Sha Tin</option>
+                  <option value="Islands"> Islands</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+              <div class="input-field">
+                <label for="depart">Age:</label>
+                <input id="h_in" type="number" class="ht_input" placeholder="Building Age" />
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+              <div class="input-field">
+                <label for="depart">Direction:</label>
+                <select id="h_room" class="custom-select ht_input" name="">
+                  <option value="1">North</option>
+                  <option value="2">South</option>
+                  <option value="3">East</option>
+                  <option value="4">West</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="rooms">Rooms:</label>
+              <select id="h_room" class="custom-select ht_input" name="">
+                <option value="1">Open Style</option>
+                <option value="2">1 Bedroom</option>
+                <option value="3">2 Bedrooms</option>
+                <option value="4">3 Bedrooms</option>
+                <option value="5">4 Bedrooms</option>
+                <option value="6">5 Bedrooms</option>
+                <option value="7">6 Bedrooms</option>
+                <option value="8+">7 Bedrooms or Above</option>
+              </select>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="price">Price:</label>
+              <div class="d-flex justify-content-center my-4">
+                <div class="w-75">
+                  HKD
+                  <input type="range" class="custom-range" id="customRange11" min="0" max="99999999">
+                </div>
+                <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+              </div>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="saleable">Saleable Area:</label>
+              <div class="d-flex justify-content-center my-4">
+                <div class="w-75">
+                  Area Ft
+                  <input type="range" class="custom-range" id="customRange12" min="0" max="10977">
+                </div>
+                <span class="font-weight-bold text-primary ml-2 valueSpan1"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <a href="userIndex.html"><button id="hotelsSearch" type="button" class="btn btn-search btn-lg btn-block">Search</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="container-main">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <a href="/html/propertyDetails(User).html"><img class="img-house" src="/img/house1.jpg" alt=""></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Valverde 3 Rooms</h4>
+              <h7 class="card-title">| Flat C Lower Floor</h7>
+              <div class="card-text">
+                <p class="opacity-text">Central and Western</p>
+                <img class="clock-img margin-right" src="/img/clock_icon.png">22 Years<margin class="margin-right"></margin>
+                <img class="compass-img margin-right" src="/img/compass_icon.jpg"> Orientation East<margin class="margin-right"></margin>
+                <img class="area-img margin-right" src="/img/actual-area_icon.png"> 72%Efficiency Ratio
+                <p>SFA 995ft &sup2;2 $43,015 | GFA 1,373ft &sup2;@ $31,173</p>
+                <p>
+                  <button class="btn btn-secondary btn-sm margin-right">Car Park Space</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Newly Decorated</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Garden View</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Club house</button>
+                </p>
+                <p><button class="btn btn-secondary btn-sm margin-right">Swimming Pool</button></p>
+                <p class="text-right text-price">$42.8M</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <a href="/html/propertyDetails(User).html"><img class="img-house" src="/img/house2.jpg" alt=""></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Beneville 2 Rooms</h4>
+              <h7 class="card-title">| Flat E Higher Floor Block 3</h7>
+              <div class="card-text">
+                <p class="opacity-text">Tsuen Mun</p>
+                <img class="clock-img margin-right" src="/img/clock_icon.png">16 Years<margin class="margin-right"></margin>
+                <img class="area-img margin-right" src="/img/actual-area_icon.png"> 74%Efficiency Ratio
+                <p>SFA 643ft &sup2;@ $13,841</p>
+                <p>
+                  <button class="btn btn-secondary btn-sm margin-right">Balcony</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Clubhouse</button>
+                </p>
+                <p class="text-right text-price">$6.68M</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <a href="/html/propertyDetails(User).html"><img class="img-house" src="/img/house3.jpg" alt=""></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Yuccie Square 3 Rooms</h4>
+              <h7 class="card-title">| Flat A Lower Floor Block 3</h7>
+              <div class="card-text">
+                <p class="opacity-text">Yeung Long</p>
+                <img class="clock-img margin-right" src="/img/clock_icon.png">4 Years<margin class="margin-right"></margin>
+                <p>SFA 995ft &sup2;2 $43,015 | GFA 1,373ft &sup2;@ $31,173</p>
+                <p>
+                  <button class="btn btn-secondary btn-sm margin-right">Car Park Space</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Newly Decorated</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Garden View</button>
+                  <button class="btn btn-secondary btn-sm margin-right">Club house</button>
+                </p>
+                <p><button class="btn btn-secondary btn-sm margin-right">Swimming Pool</button></p>
+                <p class="text-right text-price">$9M</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Username" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+</body></html>

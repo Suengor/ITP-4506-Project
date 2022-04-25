@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function chat(value1) {
+      var userBox = document.getElementById("userBox");
+      userBox.value = value1.value;
+    }
+
+    know = {
+      "hi": "hello, I am agent Chris, how can i help you?",
+      "bye": "Have a nice day!!",
+      "I want to make a appointment": "Sure, What is your name?",
+      "ok": ":)"
+    };
+
+    function talk() {
+      var user = document.getElementById("userBox").value;
+      document.getElementById("userBox").value = "";
+      var userNode = document.createElement("div");
+      userNode.classList.add("chatroom");
+      var userImg = document.createElement("img");
+      userImg.setAttribute("src", "../img/user1.jpg");
+      userImg.setAttribute("alt", "bandmember");
+      userImg.style = "width: 100%;";
+      userNode.appendChild(userImg);
+      var userP = document.createElement("p");
+      userP.innerHTML = user;
+      userNode.appendChild(userP);
+      var userToday = new Date();
+      var userTime = userToday.getHours() + ":" + userToday.getMinutes();
+      var userSpan = document.createElement("span");
+      userSpan.classList.add("time-right");
+      userSpan.innerHTML = userTime;
+      userNode.appendChild(userSpan);
+      document.getElementById("chatLog").appendChild(userNode);
+      if (user in know) {
+        var aiNode = document.createElement("div");
+        aiNode.classList.add("chatroom");
+        aiNode.classList.add("darker");
+        var aiImg = document.createElement("img");
+        aiImg.setAttribute("src", "../img/user2.png");
+        aiImg.setAttribute("alt", "bandmember");
+        aiImg.style = "width: 100%;";
+        aiImg.classList.add("right");
+        aiNode.appendChild(aiImg);
+        var aiP = document.createElement("p");
+        aiP.innerHTML = know[user];
+        aiNode.appendChild(aiP);
+        var aiToday = new Date();
+        var aiTime = userToday.getHours() + ":" + userToday.getMinutes();
+        var aiSpan = document.createElement("span");
+        aiSpan.classList.add("time-left");
+        aiSpan.innerHTML = userTime;
+        aiNode.appendChild(aiSpan);
+        document.getElementById("chatLog").appendChild(aiNode);
+      } else {
+        document.getElementById("chatLog").innerHTML += "I don't understand...<br>";
+      }
+    }
+
+  </script>
+</head>
+<style>
+  /*
+  body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+*/
+
+  .chatroom {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .chatLog {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .darker {
+    border-color: #ccc;
+    background-color: #ddd;
+  }
+
+  .chatroom::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .chatroom img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .chatroom img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+
+  .time-left {
+    float: left;
+    color: #999;
+  }
+
+</style>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="userIndex.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personalDetails.html">MyProfile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+          <pre class="text-light"><img class="user" src="/img/user.jpg"> Hi, User Chris</pre>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+  <div class="ht_banner">
+    <div class="container">
+      <h2>Agent Chat</h2>
+      <div id="chatLog">
+      </div>
+      <br>
+      <div class="chat-button">
+        <button class="btn btn-info" value="hi" onclick="chat(this);">hi</button>
+        <button class="btn btn-info" value="bye" onclick="chat(this);">bye</button>
+        <button class="btn btn-info" value="I want to make a appointment" onclick="chat(this);">I want to make a appointment</button>
+        <button class="btn btn-info" value="ok" onclick="chat(this);">ok</button>
+      </div>
+      <br>
+      <div class="form-group w-50">
+        <input id="userBox" class="form-control " type="text" onkeydown="if (event.keyCode == 13) {talk()}">
+      </div>
+      <br>
+    </div>
+
+  </div>
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Username" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+
+<link href="../css/common.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="/js/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="/css/userIndex.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/searchUser.js"></script>
+
+</html>

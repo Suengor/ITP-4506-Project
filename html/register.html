@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Drean House Online</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <link href="../css/common.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Login.html" data-toggle="modal" data-target="#exampleModal">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+  <div class="ht_banner">
+    <div class="container">
+      <div class="row steps">
+        <div class="step active">
+          <i class="material-icons">person</i>
+          <div class="content">
+            <div class="title">Step 1</div>
+            <div class="description">Set up account</div>
+          </div>
+        </div>
+        <div class="step disabled">
+          <i class="material-icons">visibility</i>
+          <div class="content">
+            <div class="title">Step 2</div>
+            <div class="description">Enter personal information</div>
+          </div>
+        </div>
+        <div class="step disabled">
+          <i class="material-icons">info</i>
+          <div class="content">
+            <div class="title">Step 3</div>
+            <div class="description">Confirm Information</div>
+          </div>
+        </div>
+      </div>
+      <div class="row card" id="registerBox" data-step="1">
+        <div class="ht_searchBox_content">
+          <div class="row">
+            <div class="col text-center heading-section">
+              <h3>Join Dream House Online</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <div class="alert alert-danger" role="alert" id="error"></div>
+            </div>
+          </div>
+          <div class="row" id="step1">
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">email</i></span>
+                <input type="email" class="form-control" placeholder="Email" id="email">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">person</i></span>
+                <input type="text" class="form-control" placeholder="Username" id="username">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">vpn_key</i></span>
+                <input type="password" class="form-control" placeholder="Password" id="password">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">vpn_key</i></span>
+                <input type="password" class="form-control" placeholder="Confirm Password" id="password_confirmation">
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="step2">
+            <div class="col-6 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">person</i></span>
+                <input type="text" class="form-control" placeholder="First Name" id="firstname">
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Last Name" id="lastname">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">phone</i></span>
+                <input type="text" class="form-control" placeholder="Mobile Phone" id="phone">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="material-icons">date_range</i></span>
+                <input type="date" class="form-control" id="date">
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="input-group justify-content-center">
+                <label class="custom-control custom-radio">
+                  <input id="gender" name="radio" type="radio" class="custom-control-input" value="Male">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Male</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="input-group justify-content-center">
+                <label class="custom-control custom-radio">
+                  <input id="gender" name="radio" type="radio" class="custom-control-input" value="Female">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Female</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row text-center justify-content-center" id="step3">
+            <small>Account Information: </small>
+            <div class="col-12 light">
+              <p id="acInfo">Username: xxxx<br />Email: abc@happy.com</p>
+              <hr />
+            </div>
+            <small>Personal Information: </small>
+            <div class="col-12 light">
+              <p id="personalInfo">Name: xx xxx xxx
+                <br />
+                Mobile Phone: 123456789
+                <br />
+                Birth Date: 02-02-1990
+                <br />
+                Gender: Male</p>
+            </div>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="input-group">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="agreeTos">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">I agree to the <a href="./terms.html" class="text-ht">Terms &amp; Condition</a> and <a href="./privacy.html" class="text-ht">Privacy Policy</a></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <button id="registerBack" type="button" class="btn btn-outline-danger" disabled>Back</button>
+              <button id="registerNext" type="button" class="btn btn-ht" disabled>Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Sign in for exclusive member deals</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col text-center">
+              <div class="alert alert-danger" role="alert" id="loginError" style="display: none;"></div>
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="material-icons">person</i></span>
+            <input type="text" class="form-control" placeholder="Username" id="loginUsername">
+          </div>
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon"><i class="material-icons">vpn_key</i></span>
+            <input type="text" class="form-control" placeholder="Password" id="loginPassword">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger modal-dismiss">Cancel</button>
+          <button type="button" class="btn btn-ht" id="btnLogin">Sign in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="trigger"></div>
+          <svg version="1.1" id="cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 37" width="5em" height="5em" xml:space="preserve">
+            <path class="circ path" style="fill:none;stroke:#28a745;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:10;" d="
+            	M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"></path>
+            <polyline class="tick path" style="fill:none;stroke:#28a745;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+  	          11.6,20 15.9,24.2 26.4,13.8 " />
+          </svg>
+          <p id="errorModalLabel" class="light"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success modal-dismiss"><i class="material-icons">done</i>OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Page</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username" aria-placeholder="Username" name="username" required />
+            <input type="password" name="pw" id="loginPw" placeholder="Password" aria-placeholder="Password" required>
+            <a href="register.html">
+              <p class="link-p">Sign Up an account</p>
+            </a>
+            <a href="">
+              <p class="link-p">Forgot your password?</p>
+            </a>
+            <input type="submit" value="LOG IN" class="btn btn-primary">
+            <input type="submit" value="LOGIN(as agent)" class="btn btn-primary">
+            <input type="submit" value="LOGIN(as CM)" class="btn btn-primary">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Email" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+
+</html>

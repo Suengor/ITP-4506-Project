@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../css/common.css" rel="stylesheet">
+  <link href="../css/pd.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/agentIndex.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <link rel="stylesheet" href="/css/agentIndex.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/register.js"></script>
+  <script src="../js/searchUser.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="agentIndex.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agentDetails.html">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Appointment(update).html">My Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+          <button id="inbox" class="notification">
+            <span>Inbox</span>
+            <span class="badge">1</span>
+          </button>
+          <div id="modal-inbox" class="modal-inbox">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="closed">&times;</span>
+              <h2>You Received a appointment</h2>
+              <div>
+                <p>Date: Nov 27</p>
+                <p>Time: 15:30pm- 16:30pm</p>
+                <p>Property: Valverde 3 Rooms</p>
+                <p>User: Mr Tang</p>
+                <p>Phone number: 12345678</p>
+                <p>Email: tommy2020@gmail.com</p>
+                <div class="row">
+                  <div class="col">Meeting Time: <select name="district" id="district" class="form-control">
+                      <option value=""></option>
+                      <optgroup label="Moring">
+                        <option value="CentralAndWestern" selected>9:30</option>
+                        <option value="WanChai">10:30</option>
+                        <option value="Eastern ">11:30</option>
+                        <option value="Southern  ">Southern </option>
+                      </optgroup>
+                      <optgroup label="Afternoon">
+                        <option value="YauTsimMong ">13:30 </option>
+                        <option value="ShamShuiPo">14:30</option>
+                        <option value="KowloonCity">15:30</option>
+                        <option value="WongTaiSin">16:30</option>
+                        <option value="KwunTong">17:30</option>
+                      </optgroup>
+                      <optgroup label="Night">
+                        <option value="KwaiTsing ">19:30</option>
+                        <option value="TsuenWan ">20:30</option>
+                        <option value="Tuen Mun ">21:30</option>
+                      </optgroup>
+                    </select></div>
+                  <div class="col">Meeting Place: <select name="district" id="district" class="form-control">
+                      <option value=""></option>
+                      <optgroup label="Hong Kong Island">
+                        <option value="CentralAndWestern" selected>Central and Western</option>
+                        <option value="WanChai">Wan Chai</option>
+                        <option value="Eastern ">Eastern </option>
+                        <option value="Southern  ">Southern </option>
+                      </optgroup>
+                      <optgroup label="Kowloon">
+                        <option value="YauTsimMong ">Yau Tsim Mong </option>
+                        <option value="ShamShuiPo">Sham Shui Po</option>
+                        <option value="KowloonCity">Kowloon City</option>
+                        <option value="WongTaiSin">Wong Tai Sin</option>
+                        <option value="KwunTong">Kwun Tong</option>
+                      </optgroup>
+                      <optgroup label="New Territories">
+                        <option value="KwaiTsing ">Kwai Tsing</option>
+                        <option value="TsuenWan ">Tsuen Wan</option>
+                        <option value="Tuen Mun ">Tuen Mun</option>
+                        <option value="YuenLong ">Yuen Long</option>
+                        <option value="North"> North</option>
+                        <option value="TaiPo"> Tai Po</option>
+                        <option value="ShaTin"> Sha Tin</option>
+                        <option value="Islands"> Islands</option>
+                      </optgroup>
+                    </select></div>
+                </div>
+                <button id="accept" class="btn btn-primary">Accept</button>
+                <button id="reject" class="btn btn-danger">Reject</button>
+              </div>
+            </div>
+          </div>
+
+          <pre class="text-light"><img class="user" src="/img/user.jpg"> Hi, Agent Tommy</pre>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+
+  <main>
+    <div class="ht_banner">
+      <div class="container">
+        <div class="container-main">
+          <!-- Trigger/Open The Modal -->
+          <button class="bn btn-outline-success margin" id="btn-plus"><span class="fa fa-plus"></span></button>
+
+          <!-- The Modal -->
+          <div id="modal-plus" class="modal-plus">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Add New Property</h2>
+              <form action="" method="get">
+
+                <fieldset>
+                  <legend>Client Information:</legend>
+                  <div class="row">
+                    <div class="col">Client name: <input type="text" id="name" class="form-control" placeholder="Tommy"></div>
+                    <div class="col">Client phone: <input type="number" id="phone" class="form-control" placeholder="12345678"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@gmail.com">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Property Information:</legend>
+                  <div class="row">
+                    <div class="col">
+                      Sale or Rental:
+                      <input type="radio" id="status1" name="status" value="sales" checked>
+                      <label for="status">Sales</label>
+                      <input type="radio" id="status" name="status" value="rental">
+                      <label for="status2">Rental</label>
+                    </div>
+                    <div class="col">
+                      Price: <input type="number" id="price" class="form-control" placeholder="42.8">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">District: <select name="district" id="district" class="form-control">
+                        <option value=""></option>
+                        <optgroup label="Hong Kong Island">
+                          <option value="CentralAndWestern" selected>Central and Western</option>
+                          <option value="WanChai">Wan Chai</option>
+                          <option value="Eastern ">Eastern </option>
+                          <option value="Southern  ">Southern </option>
+                        </optgroup>
+                        <optgroup label="Kowloon">
+                          <option value="YauTsimMong ">Yau Tsim Mong </option>
+                          <option value="ShamShuiPo">Sham Shui Po</option>
+                          <option value="KowloonCity">Kowloon City</option>
+                          <option value="WongTaiSin">Wong Tai Sin</option>
+                          <option value="KwunTong">Kwun Tong</option>
+                        </optgroup>
+                        <optgroup label="New Territories">
+                          <option value="KwaiTsing ">Kwai Tsing</option>
+                          <option value="TsuenWan ">Tsuen Wan</option>
+                          <option value="Tuen Mun ">Tuen Mun</option>
+                          <option value="YuenLong ">Yuen Long</option>
+                          <option value="North"> North</option>
+                          <option value="TaiPo"> Tai Po</option>
+                          <option value="ShaTin"> Sha Tin</option>
+                          <option value="Islands"> Islands</option>
+                        </optgroup>
+                      </select></div>
+                    <div class="col">Street: <input type="text" id="street" class="form-control" placeholder="11 May Road"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Floor: <input type="number" id="floor" class="form-control" placeholder="20"></div>
+                    <div class="col">Flat: <select id="flat" class="form-control">
+                        <option value="C">C</option>
+                        <option value="B">B</option>
+                        <option value="D">D</option>
+                        <option value="A">A</option>
+                      </select></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Room: <input type="number" id="room" class="form-control" placeholder="3"></div>
+                    <div class="col">Year Building: <input type="number" id="year" class="form-control" placeholder="22"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Efficiency ratio: <input type="number" id="ration" class="form-control" placeholder="72"></div>
+                    <div class="col">Orientation :<select id="orientation" class="form-control">
+                        <option value="">East</option>
+                        <option value="">North</option>
+                        <option value="">South</option>
+                        <option value="">West</option>
+                      </select></div>
+                  </div>
+                </fieldset>
+                <br>
+                <button type="button" class="btn btn-primary" id="add" data-dismiss="modal">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+              </form>
+            </div>
+          </div>
+          <div class="card" id="new-property">
+            <div class="card-horizontal">
+              <div class="img-square-wrapper">
+                <a href="/html/propertyDetail(Agent).html"><img class="img-house" src="/img/house1.jpg" alt=""></a>
+              </div>
+              <div class="card-body">
+                <button class="bn btn-outline-success margin float-right" id="btn-remove"><span class="fa fa-remove"></span></button>
+                <button class="bn btn-outline-success margin float-right" id="btn-edit"><span class="fa fa-edit"></span></button>
+                <div id="modal-edit" class="modal-edit">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close1">&times;</span>
+                    <h2>Edit Property</h2>
+                    <form action="" method="get">
+                      <fieldset>
+                        <legend>Client Information:</legend>
+                        <div class="row">
+                          <div class="col">Client name: <input type="text" id="name" class="form-control" placeholder="Tommy"></div>
+                          <div class="col">Client phone: <input type="number" id="phone" class="form-control" placeholder="12345678"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@gmail.com">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                      </fieldset>
+                      <fieldset>
+                        <legend>Property Information:</legend>
+                        <div class="row">
+                          <div class="col">
+                            Sale or Rental:
+                            <input type="radio" id="status1" name="status" value="sales" checked>
+                            <label for="status">Sales</label>
+                            <input type="radio" id="status" name="status" value="rental">
+                            <label for="status2">Rental</label>
+                          </div>
+                          <div class="col">
+                            Price: <input type="number" id="price" class="form-control" placeholder="42.8">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">District: <select name="district" id="district" class="form-control">
+                              <option value=""></option>
+                              <optgroup label="Hong Kong Island">
+                                <option value="CentralAndWestern" selected>Central and Western</option>
+                                <option value="WanChai">Wan Chai</option>
+                                <option value="Eastern ">Eastern </option>
+                                <option value="Southern  ">Southern </option>
+                              </optgroup>
+                              <optgroup label="Kowloon">
+                                <option value="YauTsimMong ">Yau Tsim Mong </option>
+                                <option value="ShamShuiPo">Sham Shui Po</option>
+                                <option value="KowloonCity">Kowloon City</option>
+                                <option value="WongTaiSin">Wong Tai Sin</option>
+                                <option value="KwunTong">Kwun Tong</option>
+                              </optgroup>
+                              <optgroup label="New Territories">
+                                <option value="KwaiTsing ">Kwai Tsing</option>
+                                <option value="TsuenWan ">Tsuen Wan</option>
+                                <option value="Tuen Mun ">Tuen Mun</option>
+                                <option value="YuenLong ">Yuen Long</option>
+                                <option value="North"> North</option>
+                                <option value="TaiPo"> Tai Po</option>
+                                <option value="ShaTin"> Sha Tin</option>
+                                <option value="Islands"> Islands</option>
+                              </optgroup>
+                            </select></div>
+                          <div class="col">Street: <input type="text" id="street" class="form-control" placeholder="11 May Road"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col">Floor: <input type="number" id="floor" class="form-control" placeholder="20"></div>
+                          <div class="col">Flat: <select id="flat" class="form-control">
+                              <option value="C">C</option>
+                              <option value="B">B</option>
+                              <option value="D">D</option>
+                              <option value="A">A</option>
+                            </select></div>
+                        </div>
+                        <div class="row">
+                          <div class="col">Room: <input type="number" id="room" class="form-control" placeholder="3"></div>
+                          <div class="col">Year Building: <input type="number" id="year" class="form-control" placeholder="22"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col">Efficiency ratio: <input type="number" id="ration" class="form-control" placeholder="72"></div>
+                          <div class="col">Orientation :<select id="orientation" class="form-control">
+                              <option value="East">East</option>
+                              <option value="West">West</option>
+                              <option value="North">North</option>
+                              <option value="South">South</option>
+                            </select></div>
+                        </div>
+                      </fieldset>
+                      <br>
+                      <button type="button" class="btn btn-primary" id="edit" data-dismiss="modal">Submit</button>
+                      <button type="reset" class="btn btn-primary">Reset</button>
+                    </form>
+                  </div>
+                </div>
+                <button class="bn btn-outline-success margin float-right" id="btn-pin"><img src="/img/pin_property.png" alt="" class="img-pin"></button>
+                <div id="modal-pin" class="modal-pin">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close2">&times;</span>
+                    <div class="card-group">
+                      <div class="card">
+                        <div class="card-header">
+                          95% Discount
+                        </div>
+                        <div class="card-body">
+                          <img class="card-img" src="/img/95D.jpg" alt="Card image cap">
+                          <div class="card-footer">
+                            <button class="btn btn-danger" id="btn-reserve">Reserve</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          90% Discount
+                        </div>
+                        <div class="card-body">
+                          <img class="card-img" src="/img/90D.png" alt="Card image cap">
+                          <div class="card-footer">
+                            <button class="btn btn-danger">Reserve</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          85% Discount
+                        </div>
+                        <div class="card-body">
+                          <img class="card-img" src="/img/85D.jpg" alt="Card image cap">
+                          <div class="card-footer">
+                            <button class="btn btn-danger">Reserve</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <br>
+                <h4 class="card-title">Valverde 3 Rooms</h4>
+                <h7 class="card-title">| Flat C Lower Floor</h7>
+                <div class="card-text">
+                  <p class="opacity-text">Central and Western</p>
+                  <img class="clock-img margin-right" src="/img/clock_icon.png">22 Years<margin class="margin-right"></margin>
+                  <img class="compass-img margin-right" src="/img/compass_icon.jpg"> Orientation East<margin class="margin-right"></margin>
+                  <img class="area-img margin-right" src="/img/actual-area_icon.png"> 72%Efficiency Ratio
+                  <p>SFA 995ft &sup2;2 $43,015 | GFA 1,373ft &sup2;@ $31,173</p>
+                  <p>
+                    <button class="btn btn-secondary btn-sm margin-right">Car Park Space</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Newly Decorated</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Garden View</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Club house</button>
+                  </p>
+                  <p><button class="btn btn-secondary btn-sm margin-right">Swimming Pool</button></p>
+                  <p class="text-right text-price" id="price1">$42.8M</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-horizontal">
+              <div class="img-square-wrapper">
+                <a href="/html/propertyDetail(Agent).html"><img class="img-house" src="/img/house3.jpg" alt=""></a>
+              </div>
+              <div class="card-body">
+                <button class="bn btn-outline-success margin float-right"><span class="fa fa-remove"></span></button>
+                <button class="bn btn-outline-success margin float-right"><span class="fa fa-edit"></span></button>
+                <button class="bn btn-outline-success margin float-right"><img src="/img/pin_property.png" alt="" class="img-pin"></button>
+                <br>
+                <h4 class="card-title">Yuccie Square 3 Rooms</h4>
+                <h7 class="card-title">| Flat A Lower Floor Block 3</h7>
+                <div class="card-text">
+                  <p class="opacity-text">Yeung Long</p>
+                  <img class="clock-img margin-right" src="/img/clock_icon.png">4 Years<margin class="margin-right"></margin>
+                  <p>SFA 643ft &sup2;@ $13,841</p>
+                  <p>
+                    <button class="btn btn-secondary btn-sm margin-right">Balcony</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Clubhouse</button>
+                  </p>
+                  <p class="text-right text-price">$9M</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-horizontal">
+              <div class="img-square-wrapper">
+                <a href="/html/propertyDetail(Agent).html"><img class="img-house" src="/img/house2.jpg" alt=""></a>
+              </div>
+              <div class="card-body">
+                <button class="bn btn-outline-success margin float-right"><span class="fa fa-remove"></span></button>
+                <button class="bn btn-outline-success margin float-right"><span class="fa fa-edit"></span></button>
+                <button class="bn btn-outline-success margin float-right"><img src="/img/pin_property.png" alt="" class="img-pin"></button>
+                <br>
+                <h4 class="card-title">Beneville 2 Rooms</h4>
+                <h7 class="card-title">| Flat E Higher Floor Block 3</h7>
+                <div class="card-text">
+                  <p class="opacity-text">Tsuen Mun</p>
+                  <img class="clock-img margin-right" src="/img/clock_icon.png">16 Years<margin class="margin-right"></margin>
+                  <img class="area-img margin-right" src="/img/actual-area_icon.png"> 74%Efficiency Ratio
+                  <p>SFA 428ft &sup2; @ $13,271 | GFA 576ft &sup2;@ $9,861</p>
+                  <p>
+                    <button class="btn btn-secondary btn-sm margin-right">Private Pool</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Clubhouse</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Swimming Pool</button>
+                    <button class="btn btn-secondary btn-sm margin-right">Close to MTR</button>
+                  </p>
+                  <p class="text-right text-price">$6.68M</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Username" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Get the modal
+    var modal_plus = document.getElementById("modal-plus");
+    var modal_edit = document.getElementById("modal-edit");
+    var modal_pin = document.getElementById("modal-pin");
+    var modal_inbox = document.getElementById("modal-inbox");
+
+    // Get the button that opens the modal
+    var btn_plus = document.getElementById("btn-plus");
+    var btn_pin = document.getElementById("btn-pin");
+    var btn_inbox = document.getElementById("inbox");
+    var btn_edit = document.getElementById("btn-edit");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close1")[0];
+    var span2 = document.getElementsByClassName("close2")[0];
+    var span3 = document.getElementsByClassName("closed")[0];
+
+
+    // When the user clicks the button, open the modal 
+    btn_plus.onclick = function() {
+      modal_plus.style.display = "block";
+    }
+
+    btn_edit.onclick = function() {
+      modal_edit.style.display = "block";
+    }
+
+    btn_pin.onclick = function() {
+      modal_pin.style.display = "block";
+    }
+
+    btn_inbox.onclick = function() {
+      modal_inbox.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal_plus.style.display = "none";
+    }
+    span1.onclick = function() {
+      modal_edit.style.display = "none";
+    }
+    span2.onclick = function() {
+      modal_pin.style.display = "none";
+    }
+    span3.onclick = function() {
+      modal_inbox.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal_plus && modal_edit && modal_pin && modal_inbox) {
+        modal_plus.style.display = "none";
+        modal_edit.style.display = "none";
+        modal_pin.style.display = "none";
+        modal_inbox.style.display = "none";
+      }
+    }
+    $(document).ready(function() {
+      $('#add').click(function() {
+        $('#new-property ').css("display", "block");
+        modal_plus.style.display = "none";
+      });
+      $('#accept').click(function() {
+        modal_inbox.style.display = "none";
+      });
+      $('#reject').click(function() {
+        modal_inbox.style.display = "none";
+      });
+      $('#edit').click(function() {
+        $('#price1').html("$40M");
+        modal_edit.style.display = "none";
+      });
+      $('#btn-remove').click(function() {
+        $('#new-property ').css("display", "none");
+      });
+      $('#btn-reserve').click(function() {
+        modal_pin.style.display = "none";
+        $('#price1').html("$<del>40M</del>38M");
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

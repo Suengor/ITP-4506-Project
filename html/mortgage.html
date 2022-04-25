@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="../css/common.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="/css/userIndex.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/searchUser.js"></script>
+  <link rel="stylesheet" href="css/Mortgage_Calculator.css">
+  <meta charset="UTF-8">
+  <title>Mortgage Calculator</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="userIndex.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personalDetails.html">MyProfile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myAppointemt.html">My Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+          <pre class="text-light"><img class="user" src="/img/user.jpg"> Hi, User Chris</pre>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+
+  <div class="ht_banner">
+    <div class="container">
+      <div class="container-main">
+        <h1>Mortgage Calculator</h1> <br><br>
+        <div class="d_bgcw d_flex d_flex1 d_border d_margin101011">
+          <div class="d_block d_border d_flex1 d_margin1111">
+            <div>
+              <h4>Property Price</h4>
+              <div style="margin-left:25%;font-size: 25px;">
+                <select id="priceSelecter" onchange="changePrice()">
+                  <option value="hk">HK$</option>
+                  <option value="us">US$</option>
+                  <option value="rmb">RMB￥</option>
+                </select>
+                <input type="number" style="width: 40%" min="0" max="99999999" value="0.0" id="usPrice" onchange="changePrice()">
+                <br /><br />
+                HK$<input type="number" disabled=true id="us2hk" value="0.0">
+                <br /><br />
+                HK$ 100 = US$ 700<br />
+                HK$ 100 = RMB￥ 125<br />
+                <script>
+                  function changePrice() {
+                    if (document.getElementById("priceSelecter").value == "hk") {
+                      document.getElementById("us2hk").value = document.getElementById("usPrice").value
+                    } else if (document.getElementById("priceSelecter").value == "us") {
+                      document.getElementById("us2hk").value = document.getElementById("usPrice").value * 7
+                    } else {
+                      document.getElementById("us2hk").value = document.getElementById("usPrice").value / 0.8
+                    }
+                  }
+                </script>
+              </div>
+            </div>
+            <div>
+              <br />
+              <h4>Loan amount</h4>
+              <div style="margin-left:25%;font-size: 25px;">
+                <input type="text" value="0%" disabled=true id="loanPriceRate" style="width: 25%">
+                HK$
+                <input type="text" value="0.0" id="loanPrice" style="width: 50%" disabled=true>
+              </div>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+              </div>
+              <div id="loanMessage"></div>
+              <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("loanPriceRate");
+                output.innerHTML = slider.value;
+                var output2 = document.getElementById("loanPrice");
+                var money = document.getElementById("us2hk");
+
+                slider.oninput = function() {
+                  output.value = this.value + "%";
+                  output2.value = money.value * (this.value / 100)
+                  if (this.value >= 80) {
+                    document.getElementById("loanMessage").innerHTML = "<span style='color: orange'>If using bank mortgage, the maximum LTV ratio for this property price is 90%(first-time home buyer) or 80%(non-first time home buyer)</span>";
+                  } else {
+                    document.getElementById("loanMessage").innerHTML = "";
+                  }
+                }
+              </script>
+              <br /><br />
+              <h4>Mortgage insurance</h4>
+              <div style="margin-left:25%;font-size: 20px;">
+                <select>
+                  <option>Single non-financed HK$138,320</option>
+                  <option>Single financed $547 Total: $138,320</option>
+                  <option>Annual non-financed $71,680 per year</option>
+                  <option>No need to apply</option>
+                </select>
+              </div>
+              <br /><br />
+              <h4>Interest rate plan (Repayment Period)</h4>
+              <div style="margin-left:10%;font-size: 15px;">
+                <h6>Item 1:</h6>
+                Your monthly income is HK$:
+                <input id="incomeMoney" type="number" value="0.0" style="width: 30%">
+                <br><br />
+                Your income *
+                <select id="repayment" onchange="changeIncome()">
+                  <option value="5">P=5%</option>
+                  <option value="15">P=15%</option>
+                  <option value="20">P=20%</option>
+                </select>
+                =
+                <input id="yrs" type="number" value="0" style="width: 20%" disabled=true>Yrs
+                <input id="months" type="number" value="0" style="width: 20%" disabled=true>Months
+                <br /><br>
+                <div id="repaymentMessage" style="color: red"></div>
+                <br>
+                <button id="addNewrepayment" style="margin-left: 30%" onclick="addItem()"> Add a new repayment </button>
+                <div id="newItem"></div>
+                <script>
+                  function changeIncome() {
+                    if (document.getElementById("repayment").value == 5) {
+                      document.getElementById("yrs").value = 30;
+                      document.getElementById("months").value = 3;
+                      document.getElementById('repaymentMessage').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney").value * 0.05 + "/month."
+                    } else if (document.getElementById("repayment").value == 15) {
+                      document.getElementById("yrs").value = 20;
+                      document.getElementById("months").value = 7;
+                      document.getElementById('repaymentMessage').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney").value * 0.15 + "/month."
+                    } else if (document.getElementById("repayment").value == 20) {
+                      document.getElementById("yrs").value = 10;
+                      document.getElementById("months").value = 7;
+                      document.getElementById('repaymentMessage').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney").value * 0.20 + "/month."
+                    }
+
+                    if (document.getElementById("repayment2").value == 5) {
+                      document.getElementById("yrs2").value = 30;
+                      document.getElementById("months2").value = 3;
+                      document.getElementById('repaymentMessage2').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney2").value * 0.05 + "/month."
+                    } else if (document.getElementById("repayment2").value == 15) {
+                      document.getElementById("yrs2").value = 20;
+                      document.getElementById("months2").value = 7;
+                      document.getElementById('repaymentMessage2').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney2").value * 0.15 + "/month."
+                    } else if (document.getElementById("repayment2").value == 20) {
+                      document.getElementById("yrs2").value = 10;
+                      document.getElementById("months2").value = 7;
+                      document.getElementById('repaymentMessage2').innerHTML = "So, you need to repayment HK$ " + document.getElementById("incomeMoney2").value * 0.20 + "/month."
+                    }
+                  }
+
+                  function addItem() {
+                    document.getElementById("addNewrepayment").style.display = "none";
+                    document.getElementById("newItem").innerHTML = '<h6>Item 2: </h6>Your monthly income is HK$: <input id = "incomeMoney2" type = "number" value = "0.0" style = "width: 30%" ><br><br>Your income *<select id = "repayment2" onchange = "changeIncome()" ><option value = "5" > P = 5 % </option><option value = "15" > P = 15 % </option><option value = "20" > P = 20 % </option></select> = <input id = "yrs2"type = "number"value = "0"style = "width: 20%"disabled = true > Yrs <input id = "months2"type = "number"value = "0"style = "width: 20%"disabled = true > Months <br><br><div id = "repaymentMessage2" style = "color: red"></div><br>';
+                  }
+                </script>
+              </div>
+              <h4>Addtional: </h4>
+              <div style="margin-left:10%;font-size: 15px;">
+                <table style="margin: 20px;">
+                  <tr>
+                    <td style="padding: 15px;">
+                      <h6>Agent commission</h6>
+                      HK$ <input type="number" value="0.0">
+                    </td>
+                    <td style="padding: 15px;">
+                      <h6>Renovation costs</h6>
+                      HK$ <input type="number" value="0.0">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 15px;">
+                      <h6>Legal fee</h6>
+                      HK$ <input type="number" value="0.0">
+                    </td>
+                    <td style="padding: 15px;">
+                      <h6>Cash rebate</h6>
+                      % <br><input type="number" value="0.0">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <h4>Tax</h4>
+              <div style="margin-left:10%;font-size: 20px;">
+                <table style="margin: 20px;" onchange="changeTax()">
+                  <tr>
+                    <td style="padding: 15px;">
+                      <input type="checkbox" id="tax1">
+                      Hong Kong permanent resident
+                    </td>
+                    <td style="padding: 15px;">
+                      <input type="checkbox" id="tax2">
+                      Acquires the property by company
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 15px;">
+                      <input type="checkbox" id="tax3">
+                      Own another residential property
+                    </td>
+                    <td style="padding: 15px;">
+                      <input type="checkbox" id="tax4">
+                      Special Stamp Duty (Paid by Buyer)
+                    </td>
+                  </tr>
+                </table>
+                <div id="taxMessage"></div>
+                <script>
+                  function changeTax() {
+                    var AVD = 0;
+                    var SSD = 0;
+                    var BSD = 0;
+                    if (document.getElementById("tax1").checked) {
+                      AVD += 10000;
+                      SSD += 5000;
+                      BSD += 3000;
+                    }
+
+                    if (document.getElementById("tax2").checked) {
+                      AVD += 10000;
+                      SSD += 5000;
+                      BSD += 3000;
+                    }
+
+                    if (document.getElementById("tax3").checked) {
+                      AVD += 10000;
+                      SSD += 5000;
+                      BSD += 3000;
+                    }
+
+                    if (document.getElementById("tax4").checked) {
+                      AVD += 10000;
+                      SSD += 5000;
+                      BSD += 3000;
+                    }
+                    document.getElementById("taxMessage").innerHTML = "<h3>This is your tax you need to pay: </h3><ol><li>Ad Valorem Stamp Duty (AVD) HK$ " + AVD + "</li><br><li>Special Stamp Duty (SSD) HK$ " + SSD + "</li><br><li>Buyer's Stamp Duty (BSD) HK$ " + BSD + "</li></ol>";
+                  }
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Username" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+<script type="text/javascript">
+  window.onload = function() {
+    var chart = new CanvasJS.Chart("chartContainer", {
+      legend: {
+        maxWidth: 350,
+        itemWidth: 120
+      },
+      data: [{
+        type: "pie",
+        showInLegend: true,
+        legendText: "{indexLabel}",
+        dataPoints: [{
+            y: 322500,
+            indexLabel: "Stamp Duties"
+          },
+          {
+            y: 1462000,
+            indexLabel: "Down Payment"
+          },
+          {
+            y: 7412813,
+            indexLabel: "Total Loan"
+          },
+          {
+            y: 90000,
+            indexLabel: "Other Fee"
+          },
+          {
+            y: 3131433,
+            indexLabel: "Total Interest Payment"
+          }
+        ]
+      }]
+    });
+    chart.render();
+  }
+
+  function goTo01() {
+    window.location.href = 'https://www.mreferral.com/en/apply-now/?referral_name=MidlandWeb&utm_source=Midland&utm_medium=Web&utm_campaign=mortgagecalculator';
+  }
+
+  function goTo02() {
+    window.location.href = 'https://www.mreferral.com/en/private-building/?utm_source=mrCalcWeb&utm_medium=%E8%BD%89%E6%8C%89%E8%A8%88%E7%AE%97%E6%A9%9F&ref_link=WebApplication&price=8,000,000&rate=80';
+  }
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<style>
+  .slidecontainer {
+    width: 100%;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+</style></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="/css/common.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="/css/propertyDetail(Agent).css">
+  <!--  <link rel="stylesheet" href="/css/agentIndex.css">-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Property Detail</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dream House Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="agentIndex.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agentDetails.html">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logout</a>
+            </li>
+          </ul>
+          <pre class="text-light"><img class="user" src="/img/user.jpg"> Hi, Agent Tommy</pre>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="ht_slideshow">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+
+  <main>
+    <div class="ht_banner">
+      <div class="container">
+        <div class="banner">
+          <h7 class="text-left text-dark">Main > Valverde</h7>
+          <h3 class="text-left text-dark">Flat C Lower Floor, Valverde</h3>
+          <h7 class="text-left text-dark"><span class="fa fa-map-marker"></span>11 May Road Central and Western</h7>
+        </div>
+        <div class="container-main">
+          <div class="card">
+            <div class="card-horizontal">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/img/house1.jpg" class="d-block img-house" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/houseInside.jpg" class="d-block img-house" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/housePlan.jpg" class="d-block img-house" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="card-body">
+                <h2 class="text-danger"><button class="btn btn-danger font-big">Sell</button>$42.8M</h2>
+                <div class="card-text">
+                  <br>
+                  <h5 class="margin-right">SFA: 995sq.ft. $$43,015/sq.ft.</h5>
+                  <br>
+                  <h5>GFA: 1,373sq.ft. $31,173/sq.ft.</h5>
+                  <h5 class="opacity-text">Layout: 3Room</h5>
+                  <br>
+                  <h5 class="opacity-text">Direction: East</h5>
+                  <br>
+                  <h5 class="opacity-text">Efficiency(%): 72%</h5>
+                  <br>
+                  <h5 class="opacity-text">Age: 23Yr</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Estate Information</h3>
+          <div class="container-estate">
+            <div class="margin-estate">Estate</div>
+            <margin style="margin-right: 10px">
+              <red class="text-danger">Valverde</red>
+            </margin>
+            <margin style="margin-right: 10px">Total 1 Blocks</margin> 82 Units
+            <br>
+            <div class="margin-date">Date of Occupation Permit</div>07/01/1998
+            <br>
+            <div class="margin-facilities">Facilities</div>
+            <p class="facilities-item">
+              <button class="btn btn-secondary btn-sm" disabled>Clubhouse</button>
+              <button class="btn btn-secondary btn-sm" disabled>Swimming Pool</button>
+              <button class="btn btn-secondary btn-sm" disabled>Sports Facilities</button>
+              <button class="btn btn-secondary btn-sm" disabled>Health & Beauty</button>
+            </p>
+            <br>
+            <div class="margin-school">School Net</div>
+            <red class="text-danger">Primary:11; Secondary; Central & Western</red>
+            <br>
+            <div class="margin-storeye">No. of Storeys</div>30 storeys
+            <br>
+            <div class="margin-developer">Developer</div>Kerry
+          </div>
+          <h3>Google Map</h3>
+          <img src="/img/googleMap1.PNG" alt="" class="img-google">
+          <br>
+          <br>
+          <h3>Comments</h3>
+        </div>
+        <div class="container-main bootstrap snippets bootdey">
+          <div class="col-sm-6">
+            <!-- Begin tab comment and popular posts -->
+            <div class="box-info full">
+              <!-- Tab comments and popular posts -->
+              <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#comments" data-toggle="tab"><i class="fa fa-comments"></i> User comment</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <!-- Pane comments -->
+                <div class="tab-pane active animated fadeInRight" id="comments">
+                  <!-- Begin scroll wrappper -->
+                  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 325px;">
+                    <div class="scroll-widget">
+                      <ul class="media-list">
+                        <li class="media">
+                          <a class="pull-left" href="#fakelink">
+                            <img class="media-object" src="https://bootdey.com/img/Content/User_for_snippets.png" alt="Avatar">
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading"><a href="#fakelink">Tommy</a> <small>Just now</small></h4>
+                            <p>Good!!</p>
+                          </div>
+                        </li>
+                        <li class="media">
+                          <a class="pull-left" href="#fakelink">
+                            <img class="media-object" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" alt="Avatar">
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading"><a href="#fakelink">Chris</a> <small>Yesterday at 04:00 AM</small></h4>
+                            <p>Nice!!</p>
+                          </div>
+                        </li>
+                        <li class="media">
+                          <a class="pull-left" href="#fakelink">
+                            <img class="media-object" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" alt="Avatar">
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading"><a href="#fakelink">Elvis</a> <small>January 17, 2014 05:35 PM</small></h4>
+                            <p>Excellent!!</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="slimScrollBar" style="width: 3px; position: absolute; top: 11px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; left: 1px; height: 209.5734126984127px; background: rgb(134, 134, 134);"></div>
+                    <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.3; z-index: 90; left: 1px; background: rgb(51, 51, 51);"></div>
+                  </div><!-- End div .scroll-widget -->
+                  <div class="box-footer">
+                    <p><a href="#fakelink"><i class="fa fa-share"></i> See all comments</a></p>
+                  </div>
+                </div><!-- End div .tab-pane -->
+
+                <!-- Pane popular posts -->
+              </div><!-- End div .tab-content -->
+            </div><!-- End div .box-info .full -->
+            <!-- End tab comment and popular posts -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <h5 class="white-text">Contact Us</h5>
+          <input id="h_destination" type="email" class="ht_input" placeholder="Username" />
+          <textarea class="ht_input mb-4" rows="4" placeholder="Your message"></textarea>
+          <a href="#!" class="btn btn-outline-ht float-right mb-4">Send</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2020, Dream House Online
+        <a class="float-right" href="#!">Terms &amp; Condition</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
